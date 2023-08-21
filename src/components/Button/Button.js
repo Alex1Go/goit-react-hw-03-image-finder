@@ -1,5 +1,7 @@
-export const Button = () => {
+import css from './Button.module.css'
+
+export const Button = ({ handleLoad }) => {
     return (
-        <div></div>
+        <button className={css.button} type="submit" onClick={handleLoad}></button>
     )
 }

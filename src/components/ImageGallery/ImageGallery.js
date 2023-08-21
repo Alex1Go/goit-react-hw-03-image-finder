@@ -1,5 +1,10 @@
+import css from './ImageGallery.module.css'
+
+
 export const ImageGalerry = () => {
     return (
-        <div></div>
+        <ul className={css.imageGallery}>
+          
+       </ul>
     )
 }
