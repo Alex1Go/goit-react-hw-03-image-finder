@@ -26,15 +26,12 @@ export class App extends Component () {
 //     fetchImages ()
 // }
   
-  handleSubmit = event => {
-    event.preventDefault();
-    this.props.onSubmit(this.state.querry);
-  }; 
+
   
   render() {
     return (
       <div>
-        <Searchbar onSubmit={this.handleSubmit} />
+        <Searchbar onSubmit={this.handleSubmit}/>
         <ImageGalerry />
         <Button />
       </div>
