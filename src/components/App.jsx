@@ -38,14 +38,8 @@ export class App extends Component {
   }
 }
 
-// import  {fetchImages}  from 'api'
 
-// export class App extends Component () {
-//   state = {
-//     images: [],
-//     query: '',
-//     page: 1,
-//   }
+
 
 //   // changeQuerry = newQuerry => {
 //   //   this.setState({
@@ -55,27 +49,6 @@ export class App extends Component {
 //   //   });
 //   // }
   
-// // async  componentDidUpdate(prevprops, prevState) {
-// //     if (prevState.querry !== this.state.querry || prevState.page !== this.state.page) {
-    
-// //     }
-// //     fetchImages ()
-// // }
-// //  componentDidUpdate(prevProps, prevState){
-// //   if(this.state.page !== prevState.page || this.state.query!== prevState.query ){
-// //     this.fetchImages()
-// //   }
-// // } 
 
-  
-//   // render() {
-//   //   return (
-//   //     <div>
-//   //       <Searchbar onSubmit={this.handleSubmit}/>
-//   //       <ImageGalerry />
-//   //       <Button />
-//   //     </div>
-//   //   )
-//   // };
-// };
+
 
