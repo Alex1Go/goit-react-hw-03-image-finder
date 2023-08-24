@@ -2,7 +2,8 @@ import { Component } from "react"
 import { Searchbar } from "./Searchbar/Searchbar"
 import { ImageGallery } from "./ImageGallery/ImageGallery"
 import { Button } from "./Button/Button"
-import {fetchImages } from "api"
+import { fetchImages } from "api"
+import { Loader } from  './Loader/Loader'
 
 export class App extends Component {
   state = {
@@ -38,12 +39,12 @@ componentDidUpdate(prevProps, prevState) {
   
     
   render() {
-    const { images  } = this.state;
+    const { images, loading  } = this.state;
     
     return (
       <div >
         <Searchbar onSubmit={this.handleSearchSubmit}/>
-        <ImageGallery images={images}  />
+        {loading ? <Loader/> : <ImageGallery images={images}  />}
         <Button onClick={this.handleLoadMore} />
       </div>
     );
