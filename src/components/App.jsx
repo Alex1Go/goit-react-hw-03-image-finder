@@ -17,7 +17,8 @@ componentDidUpdate(prevProps, prevState) {
       const { query, page } = this.state;
       fetchImages(query, page).then(response => {
         this.setState(prevState => ({
-          images: [...prevState.images, ...response.data.hits]
+          images: [...prevState.images, ...response.hits],
+    
         }));
       })
       .catch(error => console.error('Error fetching images:', error))
@@ -31,16 +32,18 @@ componentDidUpdate(prevProps, prevState) {
   };
 
   handleLoadMore = () => {
-    this.setState(prevState => (prevState.page + 1));
+    this.setState((prevState) => ({ page: prevState.page + 1 }));
   };
-
+ 
+  
+    
   render() {
-    const { images } = this.state;
+    const { images  } = this.state;
     
     return (
       <div >
         <Searchbar onSubmit={this.handleSearchSubmit}/>
-        <ImageGallery images={images} onImageClick={this.handleImageClick} />
+        <ImageGallery images={images}  />
         <Button onClick={this.handleLoadMore} />
       </div>
     );
