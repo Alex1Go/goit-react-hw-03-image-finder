@@ -56,14 +56,3 @@ componentDidUpdate(prevProps, prevState) {
 
 
 
-//   // changeQuerry = newQuerry => {
-//   //   this.setState({
-//   //     querry: newQuerry,
-//   //     page: 1,
-//   //     images: [],
-//   //   });
-//   // }
-  
-
-
-
