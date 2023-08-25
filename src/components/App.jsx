@@ -11,6 +11,7 @@ export class App extends Component {
     query: '',
     page: 1,
     loading: false,
+    loadMore: false,
   };
 
 componentDidUpdate(prevProps, prevState) {
@@ -19,7 +20,7 @@ componentDidUpdate(prevProps, prevState) {
       fetchImages(query, page).then(response => {
         this.setState(prevState => ({
           images: [...prevState.images, ...response.hits],
-    
+          loadMore: this.state.page < Math.ceil(response.totalHits / 12 ),
         }));
       })
       .catch(error => console.error('Error fetching images:', error))
@@ -39,13 +40,14 @@ componentDidUpdate(prevProps, prevState) {
   
     
   render() {
-    const { images, loading  } = this.state;
+    const { images, loading, loadMore  } = this.state;
     
     return (
       <div >
         <Searchbar onSubmit={this.handleSearchSubmit}/>
-        {loading ? <Loader/> : <ImageGallery images={images}  />}
-        <Button onClick={this.handleLoadMore} />
+        {loading && <Loader />}
+        <ImageGallery images={images} />
+        {loadMore && <Button onClick={this.handleLoadMore} />}
       </div>
     );
   }
